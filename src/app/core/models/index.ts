@@ -1,0 +1,1 @@
+export * from './public-anime.model';

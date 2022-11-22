@@ -15,7 +15,8 @@ import { HomeComponent } from './components/home/home.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
+    CoreModule
   ],
   declarations: [FolderPage,
                  HomeComponent]

@@ -6,7 +6,7 @@ import { PublicAnimeComponent } from "./components/public-anime/public-anime.com
 
 @NgModule({
   declarations: [
-    PublicAnimeComponent
+    PublicAnimeComponent,
 
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicAnimeService } from 'src/app/core';
 import { PublicAnimeComponent } from 'src/app/core/components/public-anime/public-anime.component';
 
 @Component({
@@ -8,8 +9,14 @@ import { PublicAnimeComponent } from 'src/app/core/components/public-anime/publi
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private publicAnimeService:PublicAnimeService
+  ) { }
 
   ngOnInit() {}
+
+  getPublicAnime(){
+    return this.publicAnimeService._people$;
+  }
 
 }

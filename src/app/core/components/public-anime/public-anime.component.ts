@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { PublicAnime, PublicAnimeService } from 'src/app/core'
+import { EventEmitter } from 'stream';
+import { IonItemSliding } from '@ionic/angular';
 
 @Component({
   selector: 'app-public-anime',
@@ -7,8 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicAnimeComponent implements OnInit {
 
-  constructor() { }
+  @Output() onEdit = new EventEmitter;
+  @Output() onDelete = new EventEmitter;
+  @Input() publicAnime:PublicAnime;
+  constructor(
+    private publicAnimeService:PublicAnimeService
+  ) { }
 
   ngOnInit() {}
+
+  /*onEditClick(slide:IonItemSliding){
+    slide.close();
+    this.onEdit.emit(this.publicAnime);
+  }
+
+  onDeleteClick(slide:IonItemSliding){
+    slide.close();
+    this.onDelete.emit(this.publicAnime);
+  }*/
 
 }
