@@ -12,14 +12,14 @@ export class PublicAnimeComponent implements OnInit {
 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() publicAnime:PublicAnime;
+  @Input() publicAnime: PublicAnime;
   constructor(
     private publicAnimeService:PublicAnimeService
   ) { }
 
   ngOnInit() {}
 
-  /*onEditClick(slide:IonItemSliding){
+  onEditClick(slide:IonItemSliding){
     slide.close();
     this.onEdit.emit(this.publicAnime);
   }
@@ -27,6 +27,6 @@ export class PublicAnimeComponent implements OnInit {
   onDeleteClick(slide:IonItemSliding){
     slide.close();
     this.onDelete.emit(this.publicAnime);
-  }*/
+  }
 
 }
