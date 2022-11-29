@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { PublicAnime, PublicAnimeService } from 'src/app/core'
-import { EventEmitter } from 'stream';
 import { IonItemSliding } from '@ionic/angular';
+import { isLowResolution} from '../../utils/screens.utils';
 
 @Component({
   selector: 'app-public-anime',
@@ -10,23 +10,18 @@ import { IonItemSliding } from '@ionic/angular';
 })
 export class PublicAnimeComponent implements OnInit {
 
-  @Output() onEdit = new EventEmitter;
-  @Output() onDelete = new EventEmitter;
-  @Input() publicAnime: PublicAnime;
+  @Output() onView = new EventEmitter;
+  @Input() publicAnime?: PublicAnime;
+  isLowResolution:()=>boolean = isLowResolution;
   constructor(
     private publicAnimeService:PublicAnimeService
   ) { }
 
   ngOnInit() {}
 
-  onEditClick(slide:IonItemSliding){
+  onViewClick(slide:IonItemSliding){
     slide.close();
-    this.onEdit.emit(this.publicAnime);
+    this.onView.emit(this.publicAnime);
   }
 
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
-    this.onDelete.emit(this.publicAnime);
-  }
-
-}
+} 

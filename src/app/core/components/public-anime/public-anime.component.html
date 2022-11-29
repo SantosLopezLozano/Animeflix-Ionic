@@ -1,11 +1,8 @@
-<ion-card>
-  <img src="https://1.bp.blogspot.com/-8dgjhV6xB2w/X2J8PcPE1TI/AAAAAAAAWUY/x2bhB62ZWM8AR4RYtPzI-TP0KuSlP0_jQCLcBGAsYHQ/s1920/1_ukHABuwCTiMfgQd-8dCZzA.jpeg" />
-  <ion-card-header>
-    <ion-card-title>Deca-Dence</ion-card-title>
-    <ion-card-subtitle>Adventure, Shonen, Action</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-    Two worlds, One planet. A young girl meets an android who lost the reason to live
-  </ion-card-content>
-</ion-card>
+<ion-item-sliding #sliding [disabled]="!isLowResolution()">
+  <ion-card (click)="onViewClick(sliding)">
+    <img *ngIf="publicAnime?.picture" [src]="publicAnime?.picture" />
+    <ion-card-header>
+      <ion-card-title class="ocultar">{{publicAnime?.name}}</ion-card-title>
+      <ion-card-subtitle class="ocultar">{{publicAnime?.rating}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>

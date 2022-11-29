@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicAnimeService } from 'src/app/core';
-import { PublicAnimeComponent } from 'src/app/core/components/public-anime/public-anime.component';
+import { AlertController, ModalController } from '@ionic/angular';
+import { PublicAnimeService} from 'src/app/core';
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   getPublicAnime(){
-    return this.publicAnimeService._people$;
+    return this.publicAnimeService._publicAnime$;
   }
-
 }

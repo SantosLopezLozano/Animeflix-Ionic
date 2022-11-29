@@ -14,12 +14,28 @@ export class PublicAnimeService{
       rating:"5*",
       resumen:"Two worlds, One planet. A young girl meets an android who lost the reason to live",
       fecha:"10-10-10",
-      picture:"https://drive.google.com/uc?export=view&id=1_OaTxoyCng4aiMtAiABtWED_S885gdwn"
+      picture:"https://1.bp.blogspot.com/-8dgjhV6xB2w/X2J8PcPE1TI/AAAAAAAAWUY/x2bhB62ZWM8AR4RYtPzI-TP0KuSlP0_jQCLcBGAsYHQ/s1920/1_ukHABuwCTiMfgQd-8dCZzA.jpeg"
+    },
+    {
+      id:2,
+      name:"Made in abyss",
+      rating:"5*",
+      resumen:"An Abyss where deams and despair live",
+      fecha:"10-10-10",
+      picture:"https://www.somosxbox.com/wp-content/uploads/2022/08/Made-in-Abyss-1.jpg"
+    },
+    {
+      id:3,
+      name:"Made in abyss",
+      rating:"5*",
+      resumen:"An Abyss where deams and despair live",
+      fecha:"10-10-10",
+      picture:"https://www.somosxbox.com/wp-content/uploads/2022/08/Made-in-Abyss-1.jpg"
     }
   ];
 
-  private _peopleSubject:BehaviorSubject<PublicAnime[]> = new BehaviorSubject(this._publicAnime);
-  public _people$ = this._peopleSubject.asObservable();
+  private _publicAnimeSubject:BehaviorSubject<PublicAnime[]> = new BehaviorSubject(this._publicAnime);
+  public _publicAnime$ = this._publicAnimeSubject.asObservable();
   
   id:number = this._publicAnime.length+1;
   constructor() {
@@ -37,13 +53,13 @@ export class PublicAnimeService{
 
   deletePublicAnimeById(id:number){
     this._publicAnime = this._publicAnime.filter(p=>p.id != id); 
-    this._peopleSubject.next(this._publicAnime);
+    this._publicAnimeSubject.next(this._publicAnime);
   }
 
   addPublicAnime(publicAnime:PublicAnime){
     publicAnime.id = this.id++;
     this._publicAnime.push(publicAnime);
-    this._peopleSubject.next(this._publicAnime);
+    this._publicAnimeSubject.next(this._publicAnime);
   }
 
   updatePublicAnime(publicAnime:PublicAnime){
@@ -54,7 +70,7 @@ export class PublicAnimeService{
       _publicAnime.picture = publicAnime.picture;
       _publicAnime.rating = publicAnime.rating;
       _publicAnime.resumen = publicAnime.resumen;
-      this._peopleSubject.next(this._publicAnime);
+      this._publicAnimeSubject.next(this._publicAnime);
     }    
   }
 }
