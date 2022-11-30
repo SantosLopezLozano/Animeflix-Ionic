@@ -50,27 +50,24 @@ export class PublicAnimeService{
   getPublicAnimeById(id:number){
     return this._publicAnime.find(p=>p.id==id);
   }
-
-  deletePublicAnimeById(id:number){
-    this._publicAnime = this._publicAnime.filter(p=>p.id != id); 
-    this._publicAnimeSubject.next(this._publicAnime);
-  }
-
-  addPublicAnime(publicAnime:PublicAnime){
-    publicAnime.id = this.id++;
-    this._publicAnime.push(publicAnime);
-    this._publicAnimeSubject.next(this._publicAnime);
-  }
-
-  updatePublicAnime(publicAnime:PublicAnime){
+  
+  viewPublicAnime(publicAnime:PublicAnime){
     var _publicAnime = this._publicAnime.find(p=>p.id==publicAnime.id);
     if(_publicAnime){
       _publicAnime.name = publicAnime.name;
-      _publicAnime.fecha = publicAnime.fecha;
-      _publicAnime.picture = publicAnime.picture;
       _publicAnime.rating = publicAnime.rating;
+      _publicAnime.fecha = publicAnime.fecha;
       _publicAnime.resumen = publicAnime.resumen;
+      _publicAnime.picture = publicAnime.picture
       this._publicAnimeSubject.next(this._publicAnime);
-    }    
+    }  
+
+  }
+
+  addPerson(){
+
+  }
+  updatePerson(){
+    
   }
 }

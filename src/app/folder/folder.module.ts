@@ -11,14 +11,14 @@ import { FolderPage } from './folder.page';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    FolderPageRoutingModule,
-    CoreModule
-  ],
-  declarations: [FolderPage,
-                 HomeComponent]
+    declarations: [FolderPage,
+        HomeComponent],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        FolderPageRoutingModule,
+        CoreModule,
+    ]
 })
-export class FolderPageModule {}
+export class FolderPageModule { }

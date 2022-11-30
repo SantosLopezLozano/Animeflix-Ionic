@@ -1,8 +1,9 @@
 <ion-item-sliding #sliding [disabled]="!isLowResolution()">
-  <ion-card (click)="onViewClick(sliding)">
+  <ion-card (click)="viewAnime()">
     <img *ngIf="publicAnime?.picture" [src]="publicAnime?.picture" />
     <ion-card-header>
       <ion-card-title class="ocultar">{{publicAnime?.name}}</ion-card-title>
       <ion-card-subtitle class="ocultar">{{publicAnime?.rating}}</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
+</ion-item-sliding>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { Component, Input, OnInit } from '@angular/core';
+import { PublicAnime } from 'src/app/core'
+
 
 @Component({
   selector: 'app-public-animes-detail',
@@ -7,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicAnimesDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() publicAnime?: PublicAnime;
+  constructor(
+    private modal:ModalController
+  ) { }
 
   ngOnInit() {}
+
+  onDismiss(result: any){
+    this.modal.dismiss(null, 'cancel');
+  }
 
 }

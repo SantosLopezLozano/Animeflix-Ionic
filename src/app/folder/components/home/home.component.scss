@@ -1,4 +1,12 @@
-p{
+p {
   display: flex;
-  flex-direction:row ;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+  }
 }

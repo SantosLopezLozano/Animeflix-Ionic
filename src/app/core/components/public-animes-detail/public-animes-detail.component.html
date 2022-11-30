@@ -1,3 +1,11 @@
 <p>
-  public-animes-detail works!
+  {{publicAnime?.name}}
+  {{publicAnime?.rating}}
 </p>
+<p>
+  {{publicAnime?.resumen}}
+</p>
+<img *ngIf="publicAnime?.picture" [src]="publicAnime?.picture" />
+<!--<ion-item-sliding #sliding [disabled]="!isLowResolution()">
+
+</ion-item-sliding>-->
