@@ -11,16 +11,24 @@ import { ModalController } from '@ionic/angular';
 export class PrivateAnimesComponent implements OnInit {
 
   constructor(
-    private privateAnimeService:PrivateAnimeService,
-    private modal:ModalController
+    private privateAnimeService: PrivateAnimeService,
+    private modal: ModalController
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  getPrivateAnime(){
+  getPrivateAnime() {
     return this.privateAnimeService._privateAnime$;
-  } 
-  async viewAnime(privateAnime:PrivateAnime){
+  }
+
+  addAnime() {
+    this.presentPrivateAnimeForm();
+  }
+  viewAnime(privateAnime:any){
+    this.presentPrivateAnimeForm(privateAnime);
+  }
+
+  async presentPrivateAnimeForm(privateAnime?:PrivateAnime){
     const modal = await this.modal.create({
       component:PrivateAnimeDetailComponent,
       componentProps:{
@@ -33,10 +41,10 @@ export class PrivateAnimesComponent implements OnInit {
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.privateAnimeService.addPerson();
+            this.privateAnimeService.addPrivateAnime(result.data.privateAnime);
             break;
           case 'Edit':
-            this.privateAnimeService.updatePerson();
+            this.privateAnimeService.viewPrivateAnime(result.data.privateAnime);
             break;
           default:
         }

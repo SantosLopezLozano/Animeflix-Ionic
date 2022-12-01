@@ -26,6 +26,7 @@
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/status-bar": "4.1.0",
     "@ionic/angular": "^6.1.9",
+    "@ngx-translate/http-loader": "^7.0.0",
     "assert": "^2.0.0",
     "fs": "^0.0.1-security",
     "https-browserify": "^1.0.0",

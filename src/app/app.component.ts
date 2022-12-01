@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LocaleService } from './core/services/locale.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,5 +14,26 @@ export class AppComponent {
     { title: 'Settings', url: '/folder/Settings', icon: 'settings' },
     { title: 'About', url: '/folder/About', icon: 'warning' },
   ];
-  constructor() {}
+  /*public labels = [];
+  language = 1;
+  constructor(
+    private translate: TranslateService,
+    private locale:LocaleService
+  ) {
+    this.translate. setDefaultLang('en');
+  }
+  onLanguage(){
+    this.language = (this.language+1)%2;
+    switch(this.language){
+      case 0:
+        this.translate.setDefaultLang('es');
+        this.locale.registerCulture('es');
+
+        break;
+      case 1:
+        this.translate.setDefaultLang('en');
+        this.locale.registerCulture('en');
+        break;
+    }
+  }*/
 }

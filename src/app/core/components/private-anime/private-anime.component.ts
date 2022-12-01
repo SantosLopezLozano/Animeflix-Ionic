@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonItemSliding } from '@ionic/angular';
 import { PrivateAnime } from '../../models';
 
 @Component({
@@ -14,8 +15,11 @@ export class PrivateAnimeComponent implements OnInit {
 
   ngOnInit() {}
 
-  viewAnime(){
+  viewAnime(slide:IonItemSliding){
+    slide.close();
     this.onView.emit(this.privateAnime);
-    console.log(this.privateAnime?.name)
+  }
+  onDeleteClick(slide:IonItemSliding){
+
   }
 }

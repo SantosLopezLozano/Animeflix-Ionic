@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PrivateAnimeComponent } from './private-anime.component';
+import { GeneroDetailComponent } from './genero-detail.component';
 
-describe('PrivateAnimeComponent', () => {
-  let component: PrivateAnimeComponent;
-  let fixture: ComponentFixture<PrivateAnimeComponent>;
+describe('GeneroDetailComponent', () => {
+  let component: GeneroDetailComponent;
+  let fixture: ComponentFixture<GeneroDetailComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrivateAnimeComponent ],
+      declarations: [ GeneroDetailComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PrivateAnimeComponent);
+    fixture = TestBed.createComponent(GeneroDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

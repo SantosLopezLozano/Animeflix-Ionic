@@ -45,10 +45,23 @@ export class PrivateAnimeService{
 
   }
 
-  addPerson(){
+  addPrivateAnime(privateAnime:PrivateAnime){
+    privateAnime.id=this.id++;
+    this._privateAnime.push(privateAnime)
+    this._privateAnimeSubject.next(this._privateAnime)
 
   }
-  updatePerson(){
-    
+  updatePrivateAnime(privateAnime:PrivateAnime){
+    var _privateAnime = this._privateAnime.find(p=>p.id==privateAnime.id);
+    if(_privateAnime){
+      _privateAnime.name = privateAnime.name;
+      _privateAnime.rating = privateAnime.rating;
+      _privateAnime.resumen = privateAnime.resumen;
+      _privateAnime.fecha = privateAnime.fecha;
+      _privateAnime.picture = privateAnime.picture;
+      _privateAnime.capitulos = privateAnime.capitulos;
+      _privateAnime.linkVideo = privateAnime.linkVideo;
+      this._privateAnimeSubject.next(this._privateAnime);
+    }  
   }
 }

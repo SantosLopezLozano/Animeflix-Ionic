@@ -1,0 +1,4 @@
+<P>
+  <!--<h1>{{'home.title' | translate}}</h1>-->
+  <app-generos *ngFor="let assignment of (getGeneros() | async)" [genero]="genero" (onEdit)="onEditGenero($event)"></app-generos>
+</P>

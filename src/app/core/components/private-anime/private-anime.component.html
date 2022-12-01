@@ -1,5 +1,11 @@
 <ion-item-sliding #sliding>
-  <ion-card (click)="viewAnime()">
+  <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick(sliding)">
+    <div class="vertical">
+      <ion-icon name="trash" ></ion-icon>
+      {{'Borrar' | uppercase}}
+    </div>
+  </ion-button>
+  <ion-card (click)="viewAnime(sliding)">
     <img *ngIf="privateAnime?.picture" [src]="privateAnime?.picture" />
     <ion-card-header>
       <ion-card-title class="ocultar">{{privateAnime?.name}}</ion-card-title>
