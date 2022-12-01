@@ -15,13 +15,13 @@ import { HttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    /*TranslateModule.forRoot({
+    TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    }),*/
+    }),
     AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
