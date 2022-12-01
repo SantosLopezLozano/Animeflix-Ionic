@@ -1,7 +1,6 @@
 import { Genero } from './../../../core/models/genero.model';
 import { GenerosService } from './../../../core/services/generos.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { GeneroComponent } from 'src/app/core/components/genero/genero.component';
 
 @Component({
   selector: 'app-generos',
@@ -19,8 +18,6 @@ export class GenerosComponent implements OnInit {
 
   getGeneros(){
     return this.generosSvc.generos$;
-  }
-  onEditGenero(genero:any){
   }
 
 }
