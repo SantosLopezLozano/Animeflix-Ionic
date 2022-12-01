@@ -9,6 +9,7 @@ import { PrivateAnime } from '../../models';
 })
 export class PrivateAnimeComponent implements OnInit {
 
+  @Output() onDelete = new EventEmitter;
   @Output() onView = new EventEmitter;
   @Input() privateAnime?: PrivateAnime;
   constructor() { }
@@ -20,6 +21,7 @@ export class PrivateAnimeComponent implements OnInit {
     this.onView.emit(this.privateAnime);
   }
   onDeleteClick(slide:IonItemSliding){
-
+    slide.close();
+    this.onDelete.emit(this.privateAnime);
   }
 }

@@ -20,13 +20,13 @@ export class GeneroComponent implements OnInit {
 
   ngOnInit() {}
 
-  getPublicAnime():PublicAnime{
+  getPublicAnime(){
     var publicAnime = this.genero?.publicAnime;
     if(publicAnime)
       return this.publicAnimeService.getPublicAnimeById(publicAnime);
     return undefined;
   }
-  getPrivateAnime():PrivateAnime{
+  getPrivateAnime(){
     var privateAnime = this.genero?.privateAnime;
     if(privateAnime)
       return this.privateAnimeService.getPrivateAnimeById(privateAnime);

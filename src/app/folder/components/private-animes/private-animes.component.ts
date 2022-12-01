@@ -2,6 +2,7 @@ import { PrivateAnimeService } from './../../../core/services/private-animes.ser
 import { Component, OnInit } from '@angular/core';
 import { PrivateAnime, PrivateAnimeDetailComponent } from 'src/app/core';
 import { ModalController } from '@ionic/angular';
+import { AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-private-animes',
@@ -12,7 +13,8 @@ export class PrivateAnimesComponent implements OnInit {
 
   constructor(
     private privateAnimeService: PrivateAnimeService,
-    private modal: ModalController
+    private modal: ModalController,
+    private alert:AlertController
   ) { }
 
   ngOnInit() { }
@@ -51,5 +53,35 @@ export class PrivateAnimesComponent implements OnInit {
       }
     });
   }
+
+  onDeletePrivateAnime(privateAnime:any){
+    this.onDeleteAlert(privateAnime);
+ }
+ async onDeleteAlert(privateAnime:any){
+  const alert = await this.alert.create({
+    header:'Atención',
+    message: '¿Está seguro de que desear este Anime?',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log("Operacion cancelada");
+        },
+      },
+      {
+        text: 'Borrar',
+        role: 'confirm',
+        handler: () => {
+          this.privateAnimeService.deletePrivateAnimeById(privateAnime.id);
+        },
+      },
+    ],
+  });
+
+  await alert.present();
+
+  const { role } = await alert.onDidDismiss();
+}
 
 }
