@@ -3,10 +3,12 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { PublicAnimeComponent } from "./components/public-anime/public-anime.component";
+import { PrivateAnimeComponent } from "./components";
 
 @NgModule({
   declarations: [
     PublicAnimeComponent,
+    PrivateAnimeComponent
 
   ],
   imports: [
@@ -18,7 +20,8 @@ import { PublicAnimeComponent } from "./components/public-anime/public-anime.com
     CommonModule,
     FormsModule,
     IonicModule,
-    PublicAnimeComponent
+    PublicAnimeComponent,
+    PrivateAnimeComponent
   ]
 })
 export class CoreModule { }

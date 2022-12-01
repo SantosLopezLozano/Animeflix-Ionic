@@ -3,6 +3,8 @@ export interface PublicAnime {
   name:string;
   rating:string;
   resumen:string;
-  fecha:String;
-  picture?:string;
+  fecha?:String;
+  picture:string;
+  capitulos?:string
+  comentarios?:String//implementacion futura
 }

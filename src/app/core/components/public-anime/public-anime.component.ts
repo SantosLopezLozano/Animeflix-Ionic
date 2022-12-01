@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { PublicAnime, PublicAnimeService } from 'src/app/core'
-import { IonItemSliding } from '@ionic/angular';
 import { isLowResolution} from '../../utils/screens.utils';
 import { AlertController } from '@ionic/angular';
 

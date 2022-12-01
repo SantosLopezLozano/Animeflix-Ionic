@@ -9,16 +9,18 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 import { HomeComponent } from './components/home/home.component';
+import { PrivateAnimesComponent } from "./components/private-animes/private-animes.component";
 
 @NgModule({
     declarations: [FolderPage,
-        HomeComponent],
+                   HomeComponent,
+                   PrivateAnimesComponent],
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
         FolderPageRoutingModule,
-        CoreModule,
+        CoreModule        
     ]
 })
 export class FolderPageModule { }

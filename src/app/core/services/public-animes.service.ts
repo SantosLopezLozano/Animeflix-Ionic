@@ -26,11 +26,29 @@ export class PublicAnimeService{
     },
     {
       id:3,
-      name:"Made in abyss",
+      name:"Yuru-Camp",
       rating:"5*",
-      resumen:"An Abyss where deams and despair live",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
       fecha:"10-10-10",
-      picture:"https://www.somosxbox.com/wp-content/uploads/2022/08/Made-in-Abyss-1.jpg"
+      picture:"https://ramenparados.com/wp-content/uploads/2020/03/Yuru-Camp-2-anime-1000x600.jpg"
+    }
+    ,
+    {
+      id:4,
+      name:"Chainsawman",
+      rating:"5*",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
+      fecha:"10-10-10",
+      picture:"https://www.geekmi.news/__export/1630956853471/sites/debate/img/2021/09/06/chainsawman_1.jpg_976912859.jpg"
+    }
+    ,
+    {
+      id:5,
+      name:"Shuumatsu No Walkyre",
+      rating:"5*",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
+      fecha:"10-10-10",
+      picture:"https://larepublica.pe/resizer/bA8Bq3M4N52o1J5kV771y335jZw=/1200x660/top/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/WMZLDAWX5JHE7LRWTP2KJ5UYZM.jpg"
     }
   ];
 
