@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -14,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CoreModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
