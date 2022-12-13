@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PrivateAnimesComponent } from "./components/private-animes/private-animes.component";
 import { GenerosComponent } from './components/generos/generos.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { AboutComponent } from '../about/about.component';
 
 
 import { HttpClient } from '@angular/common/http';
@@ -24,7 +25,8 @@ import { createTranslateLoader } from '../core/utils/translate';
         HomeComponent,
         PrivateAnimesComponent,
         GenerosComponent,
-        SettingsComponent],
+        SettingsComponent,
+        AboutComponent],
     imports: [
         CommonModule,
         FormsModule,
