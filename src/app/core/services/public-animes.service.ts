@@ -1,6 +1,7 @@
 import { PublicAnime } from '../models/public-anime.model';
-import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import * as moment from 'moment-timezone';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PublicAnimeService{
       name:"Deca-Dence",
       rating:"5*",
       resumen:"Two worlds, One planet. A young girl meets an android who lost the reason to live",
-      fecha:"10-10-10",
+      fecha:moment.utc("2011-12-18").toISOString(),
       picture:"https://1.bp.blogspot.com/-8dgjhV6xB2w/X2J8PcPE1TI/AAAAAAAAWUY/x2bhB62ZWM8AR4RYtPzI-TP0KuSlP0_jQCLcBGAsYHQ/s1920/1_ukHABuwCTiMfgQd-8dCZzA.jpeg"
     },
     {
@@ -21,7 +22,7 @@ export class PublicAnimeService{
       name:"Made in abyss",
       rating:"5*",
       resumen:"An Abyss where deams and despair live",
-      fecha:"10-10-10",
+      fecha:moment.utc("2011-12-18").toISOString(),
       picture:"https://www.somosxbox.com/wp-content/uploads/2022/08/Made-in-Abyss-1.jpg"
     },
     {
@@ -29,7 +30,7 @@ export class PublicAnimeService{
       name:"Yuru-Camp",
       rating:"5*",
       resumen:"A club where you can go and camp near the fuji mountain with your friends",
-      fecha:"10-10-10",
+      fecha:moment.utc("2011-12-18").toISOString(),
       picture:"https://ramenparados.com/wp-content/uploads/2020/03/Yuru-Camp-2-anime-1000x600.jpg"
     }
     ,
@@ -38,7 +39,7 @@ export class PublicAnimeService{
       name:"Chainsawman",
       rating:"5*",
       resumen:"A club where you can go and camp near the fuji mountain with your friends",
-      fecha:"10-10-10",
+      fecha:moment.utc("2011-12-18").toISOString(),
       picture:"https://www.geekmi.news/__export/1630956853471/sites/debate/img/2021/09/06/chainsawman_1.jpg_976912859.jpg"
     }
     ,
@@ -47,7 +48,31 @@ export class PublicAnimeService{
       name:"Shuumatsu No Walkyre",
       rating:"5*",
       resumen:"A club where you can go and camp near the fuji mountain with your friends",
-      fecha:"10-10-10",
+      fecha:moment.utc("2011-12-18").toISOString(),
+      picture:"https://larepublica.pe/resizer/bA8Bq3M4N52o1J5kV771y335jZw=/1200x660/top/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/WMZLDAWX5JHE7LRWTP2KJ5UYZM.jpg"
+    },
+    {
+      id:6,
+      name:"Shuumatsu No Walkyre",
+      rating:"5*",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
+      fecha:moment.utc("2011-12-18").toISOString(),
+      picture:"https://larepublica.pe/resizer/bA8Bq3M4N52o1J5kV771y335jZw=/1200x660/top/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/WMZLDAWX5JHE7LRWTP2KJ5UYZM.jpg"
+    },
+    {
+      id:7,
+      name:"Shuumatsu No Walkyre",
+      rating:"5*",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
+      fecha:moment.utc("2011-12-18").toISOString(),
+      picture:"https://larepublica.pe/resizer/bA8Bq3M4N52o1J5kV771y335jZw=/1200x660/top/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/WMZLDAWX5JHE7LRWTP2KJ5UYZM.jpg"
+    },
+    {
+      id:8,
+      name:"Shuumatsu No Walkyre",
+      rating:"5*",
+      resumen:"A club where you can go and camp near the fuji mountain with your friends",
+      fecha:moment.utc("2011-12-18").toISOString(),
       picture:"https://larepublica.pe/resizer/bA8Bq3M4N52o1J5kV771y335jZw=/1200x660/top/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/WMZLDAWX5JHE7LRWTP2KJ5UYZM.jpg"
     }
   ];

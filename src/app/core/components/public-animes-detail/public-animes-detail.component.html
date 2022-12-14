@@ -1,8 +1,17 @@
-<div>
-    <p>{{publicAnime?.name | uppercase}}</p>
+<ion-header>
+    <ion-toolbar>
+        <p>{{publicAnime?.name | uppercase}}</p>
+        <ion-buttons slot="end">
+            <ion-button (click)="addPrivate()">Añadir a Privado</ion-button>
+            <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
     <p>{{publicAnime?.rating}}</p>
     <img [src]="publicAnime?.picture" />
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit sapiente quidem magnam sunt, natus qui
         mollitia tenetur doloribus perferendis, quasi tempora et repellendus amet ab nostrum molestiae eveniet. Nostrum,
         minima.</p>
-</div>
+</ion-content>

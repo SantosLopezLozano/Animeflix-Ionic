@@ -22,9 +22,6 @@ ion-menu.md ion-note {
   padding-left: 10px;
 }
 
-ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
-}
 
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
@@ -114,6 +111,15 @@ ion-note {
   color: var(--ion-color-medium-shade);
 }
 
+ion-item{
+  margin-top: 10%;
+  margin: auto;
+}
+
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+ion-list {
+  height: 100%;
 }
