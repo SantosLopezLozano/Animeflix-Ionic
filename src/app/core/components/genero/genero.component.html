@@ -1,12 +1,10 @@
 <ion-item-sliding #sliding [disabled]="!isLowResolution()">
   <ion-item>
-    <p>{{genero?.name}}</p>
-    <ion-icon name="link-outline"></ion-icon>
     <ion-avatar class="task">
-      <img *ngIf="getPublicAnime()?.picture" [src]="getPublicAnime()" />
+      <img *ngIf="getPublicAnime()?.picture" [src]="getPublicAnime()?.picture" />
     </ion-avatar>
     <ion-avatar class="person">
-      <img *ngIf="getPrivateAnime()?.picture" [src]="getPrivateAnime()" />
+      <img *ngIf="getPrivateAnime()?.picture" [src]="getPrivateAnime()?.picture" />
     </ion-avatar>
   </ion-item>
 </ion-item-sliding>

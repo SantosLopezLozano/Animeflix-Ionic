@@ -5,5 +5,14 @@
     },
     "assignment":{
         "edit":"Editar"
+    },
+    "acion":{
+        "acion":"Acción"
+    },
+    "aventure":{
+        "aventure":"Aventura"
+    },
+    "borrar":{
+        "borrar":"Borrar"
     }
 }

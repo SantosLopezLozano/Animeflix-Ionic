@@ -3,6 +3,7 @@ import { PublicAnimeService } from './../../services/public-animes.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { isLowResolution } from '../../utils/screens.utils';
 import { Genero, PrivateAnime, PublicAnime } from '../../models';
+import { GenerosService } from '../../services';
 
 @Component({
   selector: 'app-genero',
@@ -15,7 +16,7 @@ export class GeneroComponent implements OnInit {
   isLowResolution = isLowResolution;
   constructor(
     private publicAnimeService:PublicAnimeService,
-    private privateAnimeService:PrivateAnimeService
+    private privateAnimeService:PrivateAnimeService,
   ) { }
 
   ngOnInit() {}

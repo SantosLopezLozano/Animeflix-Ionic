@@ -7,7 +7,6 @@ import { IonicModule } from "@ionic/angular";
 import { PublicAnimeComponent } from "./components/public-anime/public-anime.component";
 import { PrivateAnimeComponent } from "./components";
 import { GeneroComponent } from './components';
-import { GeneroDetailComponent } from './components';
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core'
 import { createTranslateLoader } from './utils/translate';
 import { HttpClient } from '@angular/common/http';
@@ -23,8 +22,7 @@ registerLocaleData(es);
     PublicAnimesDetailComponent,
     PrivateAnimeComponent,
     PrivateAnimeDetailComponent,
-    GeneroComponent,
-    GeneroDetailComponent
+    GeneroComponent
 
   ],
   imports: [
@@ -47,8 +45,7 @@ registerLocaleData(es);
     ReactiveFormsModule,
     PublicAnimeComponent,
     PrivateAnimeComponent,
-    GeneroComponent,
-    GeneroDetailComponent
+    GeneroComponent
   ],
   providers:[
     {

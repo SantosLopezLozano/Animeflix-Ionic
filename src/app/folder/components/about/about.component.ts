@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Genero, LocaleService } from 'src/app/core';
 
 @Component({
   selector: 'app-about',
@@ -7,8 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  @Input() algo?:Genero;
+  language = 1; // 0 español, 1 inglés
+  constructor(
+    private translate: TranslateService,
+    private locale:LocaleService) { }
 
   ngOnInit() {}
+
+  onLanguage(){
+    
+    this.language = (this.language+1)%2;
+    switch(this.language){
+      case 0:
+        this.translate.setDefaultLang('es');
+        this.locale.registerCulture('es');
+
+        break;
+      case 1:
+        this.translate.setDefaultLang('en');
+        this.locale.registerCulture('en');
+        break;
+    }
+
+  }
 
 }
