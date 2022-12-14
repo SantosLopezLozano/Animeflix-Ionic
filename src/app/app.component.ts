@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LocaleService } from './core/services/locale.service';
+import { Component } from '@angular/core';
+import { LocaleService } from './core';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -11,11 +12,11 @@ export class AppComponent {
     { title: 'Home', url: '/folder/Home', icon: 'home' },
     { title: 'My Animes', url: '/folder/MyAnimes', icon: 'heart' },
     { title: 'Genres', url: '/folder/Genres', icon: 'archive' },
-    { title: 'Settings', url: '/folder/Settings', icon: 'settings' },
     { title: 'About', url: '/folder/About', icon: 'warning' },
   ];
-  /*public labels = [];
-  language = 1;
+  public labels = [];
+
+  language = 1; // 0 español, 1 inglés
   constructor(
     private translate: TranslateService,
     private locale:LocaleService
@@ -35,5 +36,5 @@ export class AppComponent {
         this.locale.registerCulture('en');
         break;
     }
-  }*/
+  }
 }
