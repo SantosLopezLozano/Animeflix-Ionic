@@ -1,7 +1,7 @@
 # Animeflix-Ionic
 App para los amantes de los animes que quieran crear una lista de las series ya vistos y buscar recomendaciones para seguir consumiendo más animes
 <br>
-[![Alt text]([https://www.youtube.com/watch?v=configuroweb](https://youtu.be/4Zomi30JpM8))
+[![Alt text](https://img.youtube.com/vi/4Zomi30JpM8/0.jpg)](https://www.youtube.com/watch?v=4Zomi30JpM8)
 
 <br>
 <br><img src="github/2.png" /><br>
