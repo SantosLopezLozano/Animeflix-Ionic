@@ -3,7 +3,6 @@ export interface PrivateAnime {
   name:string;
   rating?:string;
   resumen?:string;
-  fecha?:string;
   picture:string;
   capitulos?:string;
   linkVideo?:string;

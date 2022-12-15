@@ -38,7 +38,6 @@ export class PrivateAnimeService{
       _privateAnime.name = privateAnime.name;
       _privateAnime.rating = privateAnime.rating;
       _privateAnime.resumen = privateAnime.resumen;
-      _privateAnime.fecha = privateAnime.fecha;
       _privateAnime.picture = privateAnime.picture;
       _privateAnime.capitulos = privateAnime.capitulos;
       _privateAnime.linkVideo = privateAnime.linkVideo;

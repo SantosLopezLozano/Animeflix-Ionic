@@ -19,7 +19,6 @@ export class PrivateAnimeDetailComponent implements OnInit {
       this.form.controls['name'].setValue(privateAnime.name);
       this.form.controls['rating'].setValue(privateAnime.rating);
       this.form.controls['resumen'].setValue(privateAnime.resumen);
-      this.form.controls['fecha'].setValue(privateAnime.fecha);
       this.form.controls['capitulos'].setValue(privateAnime.capitulos);
       this.form.controls['linkVideo'].setValue(privateAnime.linkVideo);
       this.form.controls['picture'].setValue(privateAnime.picture);
@@ -35,7 +34,6 @@ export class PrivateAnimeDetailComponent implements OnInit {
       name:['', [Validators.required]],
       rating:[''],
       resumen:[''],
-      fecha:[''],
       capitulos:[''],
       linkVideo:[''],
       picture:['', [Validators.required]]
