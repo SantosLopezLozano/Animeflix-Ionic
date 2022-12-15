@@ -11,14 +11,13 @@ export class GenerosService {
     {
       id: 1,
       name: "acción",
-      publicAnime: 1,
-      privateAnime: 1
+      publicAnime: 1
     },
     {
       id: 2,
       name: "fantasía",
-      publicAnime: 2,
-      privateAnime: 2
+      secondName: "romance",
+      privateAnime: 1
     }
   ];
 
@@ -37,6 +36,10 @@ export class GenerosService {
 
   getGeneroById(id: number) {
     return this._generos.find(a => a.id == id);
+  }
+
+  getacion(){
+    return this._generos.find(a => a.id == 1)
   }
 
   getGenerosByPrivateAnimeId(privateAnime: number): Genero[] {

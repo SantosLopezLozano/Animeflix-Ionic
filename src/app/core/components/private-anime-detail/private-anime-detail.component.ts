@@ -47,7 +47,7 @@ export class PrivateAnimeDetailComponent implements OnInit {
   }
 
   onSubmit(){
-    this.modal.dismiss({publicAnime: this.form.value, mode:this.mode}, 'ok');
+    this.modal.dismiss({privateAnime: this.form.value, mode:this.mode}, 'ok');
   }
 
   onDismiss(result: any){

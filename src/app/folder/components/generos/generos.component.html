@@ -1,32 +1,8 @@
-<ion-accordion-group>
-  <ion-accordion value="first">
-    <ion-item slot="header" color="light">
-      <ion-label>{{'acion.acion' | translate}}</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      <P>
-        <app-genero *ngFor="let genero of (getGeneros() | async)" [genero]="genero"></app-genero>
-      </P>
-    </div>
-  </ion-accordion>
-  <ion-accordion value="second">
-    <ion-item slot="header" color="light">
-      <ion-label>Romance</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      <P>
-        <app-genero *ngFor="let genero of (getGeneros() | async)" [genero]="genero"></app-genero>
-      </P>
-    </div>
-  </ion-accordion>
-  <ion-accordion value="third">
-    <ion-item slot="header" color="light">
-      <ion-label>{{'aventure.aventure' | translate}}</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      <P>
-        <app-genero *ngFor="let genero of (getGeneros() | async)" [genero]="genero"></app-genero>
-      </P>
-    </div>
-  </ion-accordion>
-</ion-accordion-group>
+<P>
+  <app-genero *ngFor="let genero of (getGeneros() | async)" [genero]="genero"></app-genero>
+</P>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addGenero()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

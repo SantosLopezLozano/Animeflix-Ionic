@@ -1,3 +1,4 @@
+import { GeneroDetailComponent } from './components';
 import { PublicAnimesDetailComponent } from './components/public-animes-detail/public-animes-detail.component';
 import { PrivateAnimeDetailComponent } from './components/private-anime-detail/private-anime-detail.component';
 import { CommonModule, registerLocaleData } from "@angular/common";
@@ -22,7 +23,8 @@ registerLocaleData(es);
     PublicAnimesDetailComponent,
     PrivateAnimeComponent,
     PrivateAnimeDetailComponent,
-    GeneroComponent
+    GeneroComponent,
+    GeneroDetailComponent
 
   ],
   imports: [
@@ -45,7 +47,8 @@ registerLocaleData(es);
     ReactiveFormsModule,
     PublicAnimeComponent,
     PrivateAnimeComponent,
-    GeneroComponent
+    GeneroComponent,
+    GeneroDetailComponent
   ],
   providers:[
     {

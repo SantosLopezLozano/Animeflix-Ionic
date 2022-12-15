@@ -1,10 +1,9 @@
 <ion-item-sliding #sliding [disabled]="!isLowResolution()">
-  <ion-item>
-    <ion-avatar class="task">
+  <p>
+    <ion-card class="task">
       <img *ngIf="getPublicAnime()?.picture" [src]="getPublicAnime()?.picture" />
-    </ion-avatar>
-    <ion-avatar class="person">
       <img *ngIf="getPrivateAnime()?.picture" [src]="getPrivateAnime()?.picture" />
-    </ion-avatar>
-  </ion-item>
+      <p>{{ genero?.name}} {{genero?.secondName}}</p>
+    </ion-card>
+  </p>
 </ion-item-sliding>

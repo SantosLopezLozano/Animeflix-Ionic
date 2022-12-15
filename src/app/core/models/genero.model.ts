@@ -1,6 +1,8 @@
 export interface Genero{
   id:number;
   name:string;
-  publicAnime:number;
-  privateAnime:number;
+  secondName?:string;
+  thirdName?:string;
+  publicAnime?:number;
+  privateAnime?:number;
 }
