@@ -1,0 +1,8 @@
+<p>
+  <app-private-anime *ngFor="let privateAnime of (getPrivateAnime() | async)" [privateAnime]="privateAnime" (onView)="viewAnime($event)" (onDelete)="onDeletePrivateAnime($event)"></app-private-anime>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addAnime()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</p>

@@ -1,0 +1,77 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img *ngIf="form.controls['picture']?.value" [src]="form.controls['picture'].value"></ion-img>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()"> 
+    <ion-item>
+      <ion-label position="floating">
+        Nombre
+      </ion-label>
+      <ion-input type="text" placeholder="name" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        resumen
+      </ion-label>
+      <ion-input type="text" placeholder="resumen" formControlName="resumen"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        fecha
+      </ion-label>
+      <ion-input type="text" placeholder="fecha" formControlName="fecha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        capitulos
+      </ion-label>
+      <ion-input type="text" placeholder="capitulos" formControlName="capitulos"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        linkVideo
+      </ion-label>
+      <ion-input type="text" placeholder="linkVideo" formControlName="linkVideo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        picture
+      </ion-label>
+      <ion-input type="text" placeholder="picture" formControlName="picture"></ion-input>
+    </ion-item>
+    
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>-->
+
+<ion-header>
+  <ion-toolbar>
+      <div>
+          <p>{{privateAnime?.name | uppercase}}</p>
+          <p>Episodes: {{privateAnime?.episodes}}</p>
+      </div>
+      <ion-buttons slot="end">
+          <!--<ion-button (click)="addPrivate()">Añadir a Privado</ion-button>-->
+          <ion-button (click)="onDismiss(null)">x</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img [src]="privateAnime?.foto" />
+  <p>{{privateAnime?.description}}</p>
+</ion-content>

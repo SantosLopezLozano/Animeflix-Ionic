@@ -1,0 +1,9 @@
+<ion-item-sliding #sliding [disabled]="!isLowResolution()">
+  <ion-card (click)="viewAnime()">
+    <img *ngIf="privateAnime.foto" [src]="privateAnime.foto" />
+    <ion-card-header>
+      <ion-card-title class="ocultar">{{privateAnime.name}}</ion-card-title>
+      <ion-card-subtitle class="ocultar">{{privateAnime.episodes}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-item-sliding>

@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ folder }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="open-modal" expand="block">
+        <ion-icon slot="start" name="person"></ion-icon>
+      </ion-button>
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button (click)="cancel()">Cancel</ion-button>
+              </ion-buttons>
+              <ion-title>Profile</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-button (click)="onLanguage()">{{'home.langButton' | translate}}</ion-button>
+            <ion-button (click)="signOut()">
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>{{"home.close" | translate}}</ion-label>
+            </ion-button>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-home *ngIf="folder=='Home'"></app-home>
+  <app-private-animes *ngIf="folder=='MyAnimes'"></app-private-animes>
+  <app-generos *ngIf="folder=='Genres'"></app-generos>
+  <app-about *ngIf="folder=='About'"></app-about>
+</ion-content>

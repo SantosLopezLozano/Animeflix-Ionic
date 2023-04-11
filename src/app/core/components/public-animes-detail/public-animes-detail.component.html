@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <div>
+            <p>{{publicAnime?.name | uppercase}}</p>
+            <p>Episodes: {{publicAnime?.episodes}}</p>
+        </div>
+        <ion-buttons slot="end">
+            <!--<ion-button (click)="addPrivate()">Añadir a Privado</ion-button>-->
+            <ion-button (click)="onDismiss(null)">x</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <img [src]="publicAnime?.foto" />
+    <p>{{publicAnime?.description}}</p>
+</ion-content>

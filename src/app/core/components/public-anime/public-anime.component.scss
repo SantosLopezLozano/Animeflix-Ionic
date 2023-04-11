@@ -1,0 +1,25 @@
+ion-card {
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  border-radius: 15px;
+  width: fit-content;
+  height: 24vh;  
+}
+
+@media screen and (max-width: 600px) {
+  .ocultar {
+    display: none;
+  }
+  img{
+    margin: 0;
+    padding: 0;
+    height: max-content;
+  }
+}
+app-public-anime-detail{
+  width: 100vw;
+  height: 100vh;
+}

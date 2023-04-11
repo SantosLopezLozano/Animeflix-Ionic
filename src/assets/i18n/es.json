@@ -1,0 +1,35 @@
+{
+    "home":{
+        "title":"Animeflix",
+        "langButton":"Cambia idioma",
+        "close":"Cerrar Sesión"
+    },
+    "assignment":{
+        "edit":"Editar"
+    },
+    "acion":{
+        "acion":"Acción"
+    },
+    "aventure":{
+        "aventure":"Aventura"
+    },
+    "borrar":{
+        "borrar":"Borrar"
+    },
+    "login":{
+        "title":"Iniciar sesión",
+        "email":"Email",
+        "password":"Contraseña",
+        "send":"Enviar"
+    },
+    "register":{
+        "title":"Registro",
+        "register":"quiero registrarme",
+        "first_name":"Nombre",
+        "last_name":"Apellidos",
+        "email":"Email",
+        "password":"Contraseña",
+        "confirm_password":"Repita contraseña",
+        "send":"Enviar"
+    }
+}
