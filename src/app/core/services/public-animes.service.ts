@@ -36,7 +36,6 @@ export class PublicAnimeService{
     };
   }
   
-
   getPublicAnime(){
     return this._publicAnimeSubject.value;
   }

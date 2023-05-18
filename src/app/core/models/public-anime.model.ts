@@ -1,5 +1,6 @@
 export interface PublicAnime {
   id:number;
+  docId?:string;
   name:string;
   episodes:number;
   description:string;

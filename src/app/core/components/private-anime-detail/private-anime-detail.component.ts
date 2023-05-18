@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { BehaviorSubject } from 'rxjs';
 import { PrivateAnime } from '../../models';
 
 @Component({
@@ -9,26 +11,41 @@ import { PrivateAnime } from '../../models';
 })
 export class PrivateAnimeDetailComponent implements OnInit {
 
-  @Input() privateAnime?: PrivateAnime;
+  form:FormGroup;
+  mode:"New" | "Edit" = "New";
+  @Input('privateAnime') set privateAnime(privateAnime:PrivateAnime){
+    if(privateAnime){
+      this.form.controls.id.setValue(privateAnime.id);
+      this.form.controls.docId.setValue(privateAnime.docId);
+      this.form.controls.name.setValue(privateAnime.name);
+      this.form.controls.episodes.setValue(privateAnime.episodes);
+      this.form.controls.description.setValue(privateAnime.description);
+      this.form.controls.foto.setValue(privateAnime.foto);
+      this.mode = "Edit";
+    }
+  }
   constructor(
-    private modal:ModalController
-  ) {}
+    private modal:ModalController,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      id:[null],
+      docId:[''],
+      name:['', [Validators.required]],
+      episodes:['', [Validators.required]],
+      description:['', [Validators.required]],
+      foto:['', [Validators.required]],
+    })
+  }
 
   ngOnInit() {}
 
-  onDismiss(result: any){
-    this.modal.dismiss(null, 'cancel');
+  onSubmit(){
+    this.modal.dismiss({privateAnime: this.form.value, mode:this.mode}, 'ok');
   }
 
-  async presentPrivateAnimeForm(privateAnime?:PrivateAnime){
-    const modal = await this.modal.create({
-      component:PrivateAnimeDetailComponent,
-      componentProps:{
-        privateAnime:privateAnime
-      },
-      cssClass:"modal-full-right-side"
-    });
-    modal.present();
+  onDismiss(result: any){
+    this.modal.dismiss(null, 'cancel');
   }
 
 }

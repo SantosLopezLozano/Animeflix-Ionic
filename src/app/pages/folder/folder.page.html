@@ -1,10 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title class="rojo">{{ folder }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button id="open-modal" expand="block">
-        <ion-icon slot="start" name="person"></ion-icon>
+      <!--BOTÓN AÑADIR-->
+      <ion-button *ngIf="folder =='MyAnimes'" (click)="onNewItem()">
+        <ion-icon name="add"></ion-icon>
       </ion-button>
+      <!--BOTÓN PERFIL-->
+      <ion-button id="open-modal" expand="block" (click)="openModal">
+        <ion-icon class="rojo" slot="start" name="person"></ion-icon>
+      </ion-button>
+      
       <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
         <ng-template>
           <ion-header>
@@ -39,4 +45,5 @@
   <app-private-animes *ngIf="folder=='MyAnimes'"></app-private-animes>
   <app-generos *ngIf="folder=='Genres'"></app-generos>
   <app-about *ngIf="folder=='About'"></app-about>
+
 </ion-content>

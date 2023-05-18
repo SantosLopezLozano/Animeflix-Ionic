@@ -31,5 +31,10 @@
         "password":"Contraseña",
         "confirm_password":"Repita contraseña",
         "send":"Enviar"
+    },
+    "modal":{
+        "edit":"Editar",
+        "close":"Cerrar"
     }
+    
 }

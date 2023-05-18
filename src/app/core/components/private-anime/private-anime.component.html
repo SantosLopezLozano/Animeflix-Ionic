@@ -1,9 +1,32 @@
 <ion-item-sliding #sliding [disabled]="!isLowResolution()">
-  <ion-card (click)="viewAnime()">
-    <img *ngIf="privateAnime.foto" [src]="privateAnime.foto" />
-    <ion-card-header>
-      <ion-card-title class="ocultar">{{privateAnime.name}}</ion-card-title>
-      <ion-card-subtitle class="ocultar">{{privateAnime.episodes}}</ion-card-subtitle>
+  <ion-card>
+    <img *ngIf="privateAnime.foto" [src]="privateAnime.foto" (click)="viewAnime()" />
+
+    <ion-card-header (click)="viewAnime()">
+      <ion-card-title class="ocultar, rojo">{{privateAnime.name}}</ion-card-title>
+      <ion-card-subtitle class="ocultar, rojo">{{privateAnime.episodes}}</ion-card-subtitle>
     </ion-card-header>
+
+    <ion-item>
+      <!--BOTÓN EDITAR-->
+      <ion-button class="item-expanded" *ngIf="!isLowResolution()" slot="end" fill="clear"
+        (click)="onEditClick(sliding)">
+        <div class="vertical, rojo">
+          {{'modal.edit' | translate | uppercase}}
+        </div>
+      </ion-button>
+      <!--BOTON BORRAR-->
+      <ion-button fill="clear" (click)="onDeleteClick(sliding)">
+        <div class="vertical, rojo">
+          {{'Borrar' | translate |uppercase}}
+        </div>
+      </ion-button>
+    </ion-item>
+
+    <ion-item-options>
+      <ion-item-option (click)="onEditClick(sliding)">
+        {{'modal.edit' | translate | uppercase}}
+      </ion-item-option>
+    </ion-item-options>
   </ion-card>
 </ion-item-sliding>

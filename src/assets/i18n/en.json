@@ -32,6 +32,10 @@
         "password":"Password",
         "confirm_password":"Repeat password",
         "send":"register"
+    },
+    "modal":{
+        "edit":"edit",
+        "close":"close"
     }
     
 }

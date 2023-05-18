@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IonModal } from '@ionic/angular';
+import { IonModal, ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { LocaleService } from 'src/app/core';
+import { LocaleService, PrivateAnimeDetailComponent, PrivateAnimeService } from 'src/app/core';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -13,15 +13,17 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class FolderPage implements OnInit {
   
-  @ViewChild(IonModal) modal: IonModal;
+  //@ViewChild(IonModal) modal: IonModal;
   public folder!: string;
   
   language = 1; // 0 español, 1 inglés
   constructor(
     private user: UserService,
-    private locale:LocaleService,    
+    private locale:LocaleService,
     private translate: TranslateService,
     private router: Router,
+    private modal: ModalController,
+    private privateAnimeService: PrivateAnimeService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -50,13 +52,8 @@ export class FolderPage implements OnInit {
     this.router.navigate(['login']);
   }
 
-
-
-
-
-
   //EL MODAL
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+  message = 'No se para que es esto poero es temporal así que todo correcto';
   name: string;
 
   cancel() {
@@ -73,6 +70,38 @@ export class FolderPage implements OnInit {
       this.message = `Hello, ${ev.detail.data}!`;
     }
   }
-  
 
+  //PROFILE OPTIONS
+  openModal(){
+    this.presentForm
+
+  }
+
+  //AÑADIR ANIME
+  onNewItem(){
+    switch(this.folder){
+      case 'Home':
+        break;
+      case 'MyAnimes':
+        this.presentForm(PrivateAnimeDetailComponent, (data)=>{
+          this.privateAnimeService.addPrivateAnime(data.privateAnime);
+        });
+        break;
+      default:
+    }
+  }
+
+  async presentForm(_class, onDismiss:(any)=>void){
+    const modal = await this.modal.create({
+      component:_class,
+      cssClass:"modal-full-right-side"
+    });
+    modal.present();
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        onDismiss(result.data);
+      }
+    });
+  }
+  buscar(event){}
 }

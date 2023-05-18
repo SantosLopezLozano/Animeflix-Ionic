@@ -1,6 +1,6 @@
 import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
-import { LocaleService } from './core';
+import { LocaleService, PublicAnime } from './core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,7 @@ import { LocaleService } from './core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
   public appPages = [
     { title: 'Home', url: '/folder/Home', icon: 'home' },
     { title: 'My Animes', url: '/folder/MyAnimes', icon: 'heart' },
@@ -16,7 +17,7 @@ export class AppComponent {
   ];
   public labels = [];
 
-  language = 1; // 0 español, 1 inglés
+  language = 1;
   constructor(
     private translate: TranslateService,
     private locale:LocaleService

@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LocaleService } from './core';
 import { FirebaseService } from './core/services/firebase/firebase-service';
 import { FirebaseWebService } from './core/services/firebase/web/firebase-web.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 export function firebaseServiceFactory() {
@@ -39,6 +40,7 @@ export class LocaleId extends String {
   imports: [
     BrowserModule,
     CoreModule,
+    Ng2SearchPipeModule,
     HttpClientModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({

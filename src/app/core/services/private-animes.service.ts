@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ApiService } from './api.service';
 import { FirebaseService } from './firebase/firebase-service';
 import { DocumentData } from 'firebase/firestore';
+import { IonItemSliding } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,7 @@ export class PrivateAnimeService{
       description:doc.data().description,
     };
   }
+
   getPrivateAnime(){
     return this._privateAnimeSubject.value;
   }
@@ -45,6 +47,7 @@ export class PrivateAnimeService{
         var privateAnime = (await this.firebase.getDocument('privateAnimes', id));
         resolve({
           id:0,
+          docId:privateAnime.id,
           name:privateAnime.data.name,
           episodes:privateAnime.data.episodes,
           foto:privateAnime.data.foto,
@@ -55,15 +58,39 @@ export class PrivateAnimeService{
       }
     });
   }
+  
+  async deletePrivateAnime(privateAnime:PrivateAnime){
+    try {
+      await this.firebase.deleteDocument('privateAnimes', privateAnime.docId);  
+    } catch (error) {
+      console.log(error);
+    }
+  } 
 
-  addPrivateAnime(privateAnime:PrivateAnime){
-    /*privateAnime.id=this.id++;
-    this._privateAnime$.push(privateAnime)
-    this._privateAnimeSubject.next(this._privateAnime)*/
+  async addPrivateAnime(privateAnime:PrivateAnime){
+    var _privateAnime = {
+      docId:privateAnime.docId,
+      name:privateAnime.name,
+      description:privateAnime.description,
+      episodes:privateAnime.episodes,
+      foto:privateAnime.foto
+    };
+    try {
+      await this.firebase.createDocument('privateAnimes', _privateAnime);  
+    } finally {}
   }
 
-  deletePrivateAnimeById(id:number){
-    /*this._privateAnime$ = this._privateAnime$.filter(p=>p.id != id); 
-    this._privateAnimeSubject.next(this._privateAnime);*/
+  async updatePrivateAnime(privateAnime:PrivateAnime){
+    var _privateAnime = {
+      docId:privateAnime.docId,
+      name:privateAnime.name,
+      description:privateAnime.description,
+      episodes:privateAnime.episodes,
+      foto:privateAnime.foto
+    };
+    try {
+      await this.firebase.updateDocument('privateAnimes', privateAnime.docId, _privateAnime);  
+    } finally {}
+      
   }
 }

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonItemSliding } from '@ionic/angular';
 import { PrivateAnime } from '../../models';
 import { isLowResolution} from '../../utils/screens.utils';
+import { PrivateAnimeService } from '../../services';
 
 @Component({
   selector: 'app-private-anime',
@@ -10,19 +11,32 @@ import { isLowResolution} from '../../utils/screens.utils';
 })
 export class PrivateAnimeComponent implements OnInit {
 
+  private _privateAnime:PrivateAnime;
   @Output() onDelete = new EventEmitter;
+  @Output() onEdit = new EventEmitter;
   @Output() onView = new EventEmitter;
-  @Input() privateAnime?: PrivateAnime;
+  @Input() set privateAnime(p:PrivateAnime){
+    this._privateAnime = p;
+  }
+  get privateAnime(){
+    return this._privateAnime
+  }
   isLowResolution:()=>boolean = isLowResolution;
-  constructor() { }
+  constructor(private privateAnimeService:PrivateAnimeService) { }
 
   ngOnInit() {}
-  
-  viewAnime(){
-    this.onView.emit(this.privateAnime);
+
+  onEditClick(slide:IonItemSliding){
+    slide.close();
+    this.onEdit.emit(this.privateAnime);
   }
+
   onDeleteClick(slide:IonItemSliding){
     slide.close();
     this.onDelete.emit(this.privateAnime);
+  }
+
+  viewAnime(){
+    this.onView.emit(this.privateAnime);
   }
 }
