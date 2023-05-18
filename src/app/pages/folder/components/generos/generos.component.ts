@@ -1,5 +1,5 @@
-import { ModalController } from '@ionic/angular';
-import { Genero } from './../../../../core/models/genero.model';
+import { AlertController, ModalController } from '@ionic/angular';
+import { Genero } from 'src/app/core';
 import { GenerosService } from './../../../../core/services/generos.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { GeneroDetailComponent } from 'src/app/core';
@@ -11,12 +11,16 @@ import { GeneroDetailComponent } from 'src/app/core';
 })
 export class GenerosComponent implements OnInit {
 
-  @Input() genero?:Genero;
   constructor(
     private generosSvc:GenerosService,
-    private modal:ModalController
+    private modal:ModalController,
+    private alert:AlertController
   ) { }
 
   ngOnInit() {}
+
+  getGeneros(){
+    return this.generosSvc.generos$
+  }
 
 }

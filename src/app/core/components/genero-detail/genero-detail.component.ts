@@ -17,7 +17,6 @@ export class GeneroDetailComponent implements OnInit {
     if(genero){
       this.form.controls['id'].setValue(genero.id);
       this.form.controls['name'].setValue(genero.name);
-      this.form.controls['picture'].setValue(genero.privateAnime);
       this.mode = "Edit";
     }
   }constructor(

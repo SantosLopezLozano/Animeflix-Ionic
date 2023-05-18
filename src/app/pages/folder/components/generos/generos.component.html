@@ -1,3 +1,3 @@
 <p>
-    <app-genero></app-genero>
+    <app-genero *ngFor="let genero of (getGeneros() | async)" [genero]="genero"></app-genero>
 </p>

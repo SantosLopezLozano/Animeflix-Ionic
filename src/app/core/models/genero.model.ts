@@ -1,8 +1,7 @@
-export interface Genero{
+export interface Genero {
   id:number;
+  docId?:string;
   name:string;
-  secondName?:string;
-  thirdName?:string;
-  publicAnime?:number;
-  privateAnime?:number;
+  publicAnimeId?:string;
+  privateAnimeId?:string;
 }

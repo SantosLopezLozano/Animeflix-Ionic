@@ -1,75 +1,73 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Genero } from "../models";
+import { ApiService } from "./api.service";
+import { FirebaseService } from "./firebase/firebase-service";
+import { DocumentData } from "firebase/firestore";
+import { async } from "@firebase/util";
+import { rejects } from "assert";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GenerosService {
 
-  private _generos: Genero[] = [
-    {
-      id: 1,
-      name: "acción",
-      publicAnime: 1
-    },
-    {
-      id: 2,
-      name: "fantasía",
-      secondName: "romance",
-      privateAnime: 1
-    }
-  ];
+  private _generos: Genero[] = [];
 
-  private _generosSubject: BehaviorSubject<Genero[]> = new BehaviorSubject(this._generos);
+  private _generosSubject: BehaviorSubject<Genero[]> = new BehaviorSubject([]);
   public generos$ = this._generosSubject.asObservable();
 
 
-  id: number = this._generos.length + 1;
-  constructor() {
+  unsubscr
+  constructor(
+    private api: ApiService,
+    private firebase: FirebaseService
+  ) {
+    this.unsubscr = this.firebase.subscribeToCollection('generos', this._generosSubject, this.mapGenero)
+  }
 
+  ngOnDestroy(): void {
+    this.unsubscr();
+  }
+
+  private mapGenero(doc: DocumentData) {
+    return {
+      id: 0,
+      docId: doc.id,
+      name: doc.data().name,
+      publicAnimeId: doc.data().publicAnimeId,
+      privateAnimeId: doc.data().privateAnimeId
+    }
   }
 
   getGeneros() {
-    return this._generos;
+    return this._generosSubject.value;
   }
 
-  getGeneroById(id: number) {
-    return this._generos.find(a => a.id == id);
-  }
+  getGeneroById(id: string) {
+    return new Promise<Genero>(async (resolve, reject) =>{
+        try {
+          var response = (await this.firebase.getDocument('generos', id));
+          resolve({
+            id: 0,
+            docId:response.id,
+            name:response.data.name,
+            publicAnimeId:response.data.publicAnimeId,
+            privateAnimeId:response.data.privateAnimeId
+          });
+        } catch (error){
+          reject (error)
+        }
+      });
+    }
 
   getacion(){
-    return this._generos.find(a => a.id == 1)
-  }
-
-  getGenerosByPrivateAnimeId(privateAnime: number): Genero[] {
-    return this._generos.filter(a => a.privateAnime == privateAnime);
-  }
-
-  getGenerosByPublicAnimeId(publicAnime: number): Genero[] {
-    return this._generos.filter(a => a.publicAnime == publicAnime);
-  }
-
-  deleteGeneroById(id: number) {
-    this._generos = this._generos.filter(a => a.id != id);
-    this._generosSubject.next(this._generos);
-  }
-
-  addGenero(genero: Genero) {
-    genero.id = this.id++;
-    this._generos.push(genero);
-    this._generosSubject.next(this._generos);
-  }
-
-  updateGenero(genero: Genero) {
-    var _genero = this._generos.find(a => a.id == genero.id);
-    if (_genero) {
-      _genero.id = genero.id;
-      _genero.privateAnime = genero.privateAnime;
-      _genero.publicAnime = genero.publicAnime;
-      _genero.name = genero.name;
+      return this._generos.find(a => a.id == 1)
     }
-    this._generosSubject.next(this._generos);
 
-  }
+  deleteGeneroById(id: number) {}
+
+  addGenero(genero: Genero) {}
+
+  updateGenero(genero: Genero) {}
 }
