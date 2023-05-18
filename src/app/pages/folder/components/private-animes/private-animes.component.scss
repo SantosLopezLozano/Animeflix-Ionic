@@ -10,12 +10,6 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .carta {
-    min-height: 33%;
-    max-height: 33%;
-    height: 33%;
-  }
 }
 
 img {
