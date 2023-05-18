@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="rojo">{{ folder }}</ion-title>
+    <ion-searchbar></ion-searchbar>
     <ion-buttons slot="end">
       <!--BOTÓN AÑADIR-->
       <ion-button *ngIf="folder =='MyAnimes'" (click)="onNewItem()">

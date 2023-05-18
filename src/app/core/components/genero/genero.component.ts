@@ -12,8 +12,15 @@ import { GenerosService } from '../../services';
 })
 export class GeneroComponent implements OnInit {
 
-  @Input() genero?:Genero;
+  @Input('genero') set genero(g:Genero){
+    this._genero = g;
+    this.loadPrivateAndPublic(g);
+  }
+
+  private async loadPrivateAndPublic(a:Genero){}
+
   isLowResolution = isLowResolution;
+  private _genero:Genero;
   constructor(
     private publicAnimeService:PublicAnimeService,
     private privateAnimeService:PrivateAnimeService,
