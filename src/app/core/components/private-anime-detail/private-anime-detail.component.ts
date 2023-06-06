@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { BehaviorSubject } from 'rxjs';
 import { PrivateAnime } from '../../models';
 
 @Component({

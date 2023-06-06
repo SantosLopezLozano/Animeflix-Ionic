@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PrivateAnimesComponent } from "./components/private-animes/private-animes.component";
 import { GenerosComponent } from './components/generos/generos.component';
 import { AboutComponent } from './components/about/about.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 import { HttpClient } from '@angular/common/http';
@@ -24,6 +25,7 @@ import { createTranslateLoader } from '../../core/utils/translate';
         HomeComponent,
         PrivateAnimesComponent,
         GenerosComponent,
+        ProfileComponent,
         AboutComponent],
     imports: [
         CommonModule,

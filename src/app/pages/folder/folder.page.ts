@@ -47,11 +47,6 @@ export class FolderPage implements OnInit {
 
   }
 
-  signOut(){
-    this.user.signOut();
-    this.router.navigate(['login']);
-  }
-
   //EL MODAL
   message = 'No se para que es esto poero es temporal así que todo correcto';
   name: string;

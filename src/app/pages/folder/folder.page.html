@@ -1,36 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="rojo">{{ folder }}</ion-title>
-    <ion-searchbar></ion-searchbar>
     <ion-buttons slot="end">
       <!--BOTÓN AÑADIR-->
       <ion-button *ngIf="folder =='MyAnimes'" (click)="onNewItem()">
         <ion-icon name="add"></ion-icon>
       </ion-button>
-      <!--BOTÓN PERFIL-->
-      <ion-button id="open-modal" expand="block" (click)="openModal">
-        <ion-icon class="rojo" slot="start" name="person"></ion-icon>
-      </ion-button>
-      
-      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-buttons slot="end">
-                <ion-button (click)="cancel()">Cancel</ion-button>
-              </ion-buttons>
-              <ion-title>Profile</ion-title>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content class="ion-padding">
-            <ion-button (click)="onLanguage()">{{'home.langButton' | translate}}</ion-button>
-            <ion-button (click)="signOut()">
-              <ion-icon slot="start" name="log-out-outline"></ion-icon>
-              <ion-label>{{"home.close" | translate}}</ion-label>
-            </ion-button>
-          </ion-content>
-        </ng-template>
-      </ion-modal>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -45,6 +20,7 @@
   <app-home *ngIf="folder=='Home'"></app-home>
   <app-private-animes *ngIf="folder=='MyAnimes'"></app-private-animes>
   <app-generos *ngIf="folder=='Genres'"></app-generos>
+  <app-profile *ngIf="folder=='Profile'"></app-profile>
   <app-about *ngIf="folder=='About'"></app-about>
 
 </ion-content>

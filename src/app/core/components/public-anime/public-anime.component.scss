@@ -1,22 +1,37 @@
 ion-card {
   align-items: center;
   text-align: center;
+  height: 40vh;
+}
+
+ion-card:hover{
+  background-color: rgba(135, 0, 0, 0.677);
 }
 
 img {
   border-radius: 15px;
-  width: fit-content;
-  height: 24vh;  
+  margin-top: 10px;
+  width: 90%;
+  height: 65%;
 }
 
 @media screen and (max-width: 600px) {
   .ocultar {
     display: none;
   }
+  ion-card{
+    align-items: center;
+    height: 25vh;
+    width: 45vw;
+  }
+
   img{
+    border-radius: 5px;
     margin: 0;
     padding: 0;
-    height: max-content;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 app-public-anime-detail{

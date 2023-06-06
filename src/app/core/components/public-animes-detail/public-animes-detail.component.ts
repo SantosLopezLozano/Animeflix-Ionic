@@ -19,10 +19,7 @@ export class PublicAnimesDetailComponent implements OnInit {
   onDismiss(result: any){
     this.modal.dismiss(null, 'cancel');
   }
-
-  addPrivate(){
-    this.presentPublicAnimeForm();
-  }
+  
   async presentPublicAnimeForm(publicAnime?:PublicAnime){
     const modal = await this.modal.create({
       component:PublicAnimesDetailComponent,

@@ -1,7 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <div>
-      <p>{{privateAnime?.name | uppercase}}</p>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+        <ion-item>
+          <ion-input type="text" placeholder="Anime Name Here" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <p>Episodes:&nbsp;</p>
+          <ion-input type="text" placeholder="Anime Episodes Here" formControlName="episodes"></ion-input>
+        </ion-item>
+      </form>
     </div>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">x</ion-button>
@@ -11,32 +19,20 @@
 
 <ion-content class="ion-padding">
   <img [src]="privateAnime?.foto" />
-<form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-  <ion-item>
-    <ion-label position="floating">
-      Anime Name
-    </ion-label>
-    <ion-input type="text" placeholder="Anime Name Here" formControlName="name"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">
-      Episodes
-    </ion-label>
-    <ion-input type="text" placeholder="Anime Episodes Here" formControlName="episodes"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">
-      Description
-    </ion-label>
-    <ion-input type="text" placeholder="Anime description Here" formControlName="description"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">
-      Foto
-    </ion-label>
-    <ion-input type="text" placeholder="Anime Image Link Here" formControlName="foto"></ion-input>
-  </ion-item>
-</form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating" id="descripcion">
+        Description
+      </ion-label>
+      <ion-input type="text" placeholder="Anime description Here" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Foto
+      </ion-label>
+      <ion-input type="text" placeholder="Anime Image Link Here" formControlName="foto"></ion-input>
+    </ion-item>
+  </form>
 </ion-content>
 
 <ion-footer>
